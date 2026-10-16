@@ -1,70 +1,74 @@
 
 class Vehicle {
-    void showVehicle() {
-        System.out.println("This is a vehicle");
+    String brand = "Toyota";
+
+    void start() {
+        System.out.println("Vehicle is starting.");
     }
 }
 
+// Single Inheritance
 class Car extends Vehicle {
     void showCar() {
-        System.out.println("This is a car");
+        System.out.println("Car Brand: " + brand);
     }
 }
 
+// Multilevel Inheritance
 class Person {
-    void showPerson() {
-        System.out.println("Person class");
-    }
+    String name = "Rahul";
 }
 
 class Employee extends Person {
-    void showEmployee() {
-        System.out.println("Employee class");
-    }
+    int id = 101;
 }
 
 class Manager extends Employee {
     void showManager() {
-        System.out.println("Manager class");
+        System.out.println("Name: " + name);
+        System.out.println("Employee ID: " + id);
+        System.out.println("Designation: Manager");
     }
 }
 
+// Hierarchical Inheritance
 class Shape {
-    void showShape() {
-        System.out.println("This is a shape");
+    void display() {
+        System.out.println("This is a shape.");
     }
 }
 
 class Circle extends Shape {
-    void showCircle() {
-        System.out.println("This is a circle");
+    void area() {
+        System.out.println("Area of Circle: " + (3.14 * 5 * 5));
     }
 }
 
 class Rectangle extends Shape {
-    void showRectangle() {
-        System.out.println("This is a rectangle");
+    void area() {
+        System.out.println("Area of Rectangle: " + (4 * 6));
     }
 }
 
-public class InheritanceDemo {
+public class Main {
     public static void main(String[] args) {
-        Car c = new Car();
-        c.showVehicle();
-        c.showCar();
 
+        System.out.println("Single Inheritance:");
+        Car c = new Car();
+        c.showCar();
+        c.start();
+
+        System.out.println("\nMultilevel Inheritance:");
         Manager m = new Manager();
-        m.showPerson();
-        m.showEmployee();
         m.showManager();
 
-        Circle ci = new Circle();
-        ci.showShape();
-        ci.showCircle();
+        System.out.println("\nHierarchical Inheritance:");
+        Circle cir = new Circle();
+        cir.display();
+        cir.area();
 
         Rectangle r = new Rectangle();
-        r.showShape();
-        r.showRectangle();
+        r.display();
+        r.area();
     }
 }
-
