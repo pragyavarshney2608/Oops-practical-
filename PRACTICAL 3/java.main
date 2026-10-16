@@ -1,1 +1,48 @@
 
+interface Printable {
+    void print();
+}
+
+interface Scannable {
+    void scan();
+}
+
+// Implements multiple interfaces
+class AllInOnePrinter implements Printable, Scannable {
+    public void print() {
+        System.out.println("Printing document...");
+    }
+
+    public void scan() {
+        System.out.println("Scanning document...");
+    }
+}
+
+// Base class
+class Machine {
+    void start() {
+        System.out.println("Machine is starting...");
+    }
+}
+
+// Derived class implements an interface
+class SmartPrinter extends Machine implements Printable {
+    public void print() {
+        System.out.println("Smart printer is printing...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Multiple Inheritance Using Interfaces:");
+        AllInOnePrinter p = new AllInOnePrinter();
+        p.print();
+        p.scan();
+
+        System.out.println("\nHybrid Inheritance:");
+        SmartPrinter s = new SmartPrinter();
+        s.start();
+        s.print();
+    }
+}
+
